@@ -1,5 +1,7 @@
 # Simple Yii2 Google Recaptcha V2 widget and component
 
+You can use it in simple or Pjax ActiveForm
+
 ### Load component
 ```
 'components' => [
@@ -39,7 +41,21 @@ $form->field($model, 'captcha')->widget(
   'app\widgets\GoogleRecaptchaV2', 
   [
     'siteKey' => Yii::$app->captcha->siteKey
-   ]
+  ]
+) 
+  ?>
+```
+### Options
+```
+<?= 
+$form->field($model, 'captcha')->widget(
+  'app\widgets\GoogleRecaptchaV2', 
+  [
+    'siteKey' => 'Your site key',
+    'language' => 'Forced language code',
+    'theme' => 'light or dark',
+    'size' => 'normal or compact',
+  ]
 ) 
   ?>
 ```
